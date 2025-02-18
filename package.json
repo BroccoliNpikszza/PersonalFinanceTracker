@@ -1,0 +1,14 @@
+{
+  "name": "personalfinancetracker",
+  "version": "1.0.0",
+  "description": "A DBMS project for personal finance tracking. User will be able to add details on monthly income, expenses, investments and get detailed report on monthly or annually.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

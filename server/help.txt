@@ -1,0 +1,30 @@
+node-cron to automatically update all accounts daily
+
+installation
+npm i node-cron
+
+maybe code for cron.js
+import cron from "node-cron";
+import Account from "./models/accountModel.js";
+
+/**
+ * 🕒 Daily Job: Apply Interest to All Accounts
+ * Runs every day at midnight (00:00)
+ */
+cron.schedule("0 0 * * *", async () => {
+    console.log("🔄 Running daily interest update...");
+    
+    const accounts = await Account.find();
+    for (let account of accounts) {
+        await account.save(); // This triggers the pre-save hook
+    }
+    
+    console.log("✅ Interest update complete.");
+});
+
+plug into index.js with an import
+
+controllers for necessary models
+routes for all models
+services - pdf creator, email services
+tests - unit, integration
